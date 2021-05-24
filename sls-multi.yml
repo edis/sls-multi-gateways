@@ -1,0 +1,10 @@
+services:
+  - srvName: auth
+    srvPath: auth
+    srvSource: ./auth
+  - srvName: cms
+    srvPath: cms
+    srvSource: ./cms
+  - srvName: users
+    srvPath: users
+    srvSource: ./users
