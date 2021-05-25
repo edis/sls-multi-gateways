@@ -1,7 +1,7 @@
 {
-  "name": "sls-multi",
-  "version": "1.0.0",
+  "name": "@edis/sls-multi-gateways",
   "description": "",
+  "version": "1.0.0",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [
@@ -28,7 +28,7 @@
     "yaml": "^1.10.2"
   },
   "bin": {
-    "say-cli": "./build/index.js"
+    "sls-multi-gateways": "build/index.js"
   },
   "devDependencies": {
     "del-cli": "^3.0.1"

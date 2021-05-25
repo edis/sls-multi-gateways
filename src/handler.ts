@@ -6,7 +6,7 @@ import express from "express";
 import {createProxyMiddleware} from "http-proxy-middleware";
 
 const readConfigFile = () => {
-    const file = readFileSync(path.join(process.cwd(), 'sls-multi.yml'),  'utf8');
+    const file = readFileSync(path.join(process.cwd(), 'sls-multi-gateways.yml'),  'utf8');
     return YAML.parse(file).services as Service[];
 };
 
