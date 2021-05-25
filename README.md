@@ -30,3 +30,7 @@ services:
 ```
 
 All srvPaths are mapped to ```localhost:3000/dev/[srvPath]```
+
+## TODO
+- [ ] Allow stage arg to be passed in when running cli (default is dev)
+- [ ] Specify port arg to be passed in when running cli (default port is 3000)
