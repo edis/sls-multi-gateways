@@ -24,8 +24,8 @@ services:
   - srvName: [name of the service]
     srvPath: [path to the service]
     srvSource: [path to the serverless.yml file belong to that service]
-  - srvName: [name of the service #2]
-    srvPath: [path to the service #2]
+  - srvName: [name of the service 2]
+    srvPath: [path to the service 2]
     srvSource: [path to the serverless.yml file belong to that service]
 ```
 
