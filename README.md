@@ -6,15 +6,22 @@ sls-multi-gateways needs to be install globally using the following command:
 ```bash
 npm install -g sls-multi-gateways
 ```
-<br />
 
 ## Usage
 After installing sls-multi-gateways, cd into your project directory
 ```bash
-cd [project-directory];
+cd [project-directory]
 ```
 
 Create a sls-multi-gateways config file
 ```bash
 touch sls-multi-gateways
+```
+
+Inside your sls-multi-gateways config file add the services you would like to run
+```bash
+services:
+  - srvName: [name of the service]
+    srvPath: [path to the service]
+    srvSource: [path to the serverless.yml file belong to that service]
 ```
