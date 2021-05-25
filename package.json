@@ -1,5 +1,5 @@
 {
-  "name": "@edis/sls-multi-gateways",
+  "name": "sls-multi-gateways",
   "description": "",
   "version": "1.0.0",
   "main": "./build/index.js",
