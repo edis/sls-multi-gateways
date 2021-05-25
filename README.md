@@ -25,3 +25,5 @@ services:
     srvPath: [path to the service]
     srvSource: [path to the serverless.yml file belong to that service]
 ```
+
+All srvPaths are mapped to ```localhost:3000/dev/[srvPath]```
