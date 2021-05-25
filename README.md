@@ -6,6 +6,7 @@ sls-multi-gateways needs to be install globally using the following command:
 ```bash
 npm install -g sls-multi-gateways
 ```
+<br />
 
 ## Usage
 After installing sls-multi-gateways, cd into your project directory
