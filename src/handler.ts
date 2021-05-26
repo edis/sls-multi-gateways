@@ -14,8 +14,6 @@ const runServices = (services: Service[], httpPort: number, prefixColors: string
     const commands = [];
 
     for (let i = 0; i < services.length; i++) {
-        // const execCommand = `cd  ${process.cwd()}/${services[i].srvName}; sls offline --stage dev --httpPort ${httpPort + i} --lambdaPort ${httpPort + i + 1000}`;
-        // cd  ../techtimes-api/${services[i].srvName};
         const execCommand = `
             cd  ${process.cwd()}/${services[i].srvName};
             sls offline --stage dev --httpPort ${httpPort + i} --lambdaPort ${httpPort + i + 1000}
