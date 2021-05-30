@@ -15,7 +15,7 @@ cd [project-directory]
 
 Create a sls-multi-gateways config file
 ```bash
-touch sls-multi-gateways
+touch sls-multi-gateways.yml
 ```
 
 Inside your sls-multi-gateways config file add the services you would like to run
