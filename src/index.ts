@@ -1,21 +1,18 @@
 #!/usr/bin/env node
 
-import yargs from 'yargs';
 import concurrently from 'concurrently';
 import {readConfigFile, runProxy, runServices} from "./handler";
 
-const args: any  = yargs.options({
-    'port': { type: 'number', demandOption: true, alias: 'p', default: 4000 },
-}).argv;
-
-console.log(args.port);
-const httpPort = args.port;
+import {Service} from "./types/service";
 
 const prefixColors = [
     'blue', 'green', 'magenta', 'cyan', 'white', 'gray', 'yellow', 'red'
 ];
 
-const services = readConfigFile();
+const file = readConfigFile()
+
+const services = file.services as Service[];
+const httpPort = file.port || 3000;
 
 const commands = runServices(services, httpPort, prefixColors);
 

@@ -5,11 +5,13 @@ import {Service} from "./types/service";
 import express from "express";
 import {createProxyMiddleware} from "http-proxy-middleware";
 
+// reads and parses config file
 const readConfigFile = () => {
     const file = readFileSync(path.join(process.cwd(), 'sls-multi-gateways.yml'),  'utf8');
-    return YAML.parse(file).services as Service[];
+    return YAML.parse(file)
 };
 
+// runs each services
 const runServices = (services: Service[], httpPort: number, prefixColors: string[]) => {
     const commands = [];
 
@@ -29,6 +31,7 @@ const runServices = (services: Service[], httpPort: number, prefixColors: string
     return commands
 }
 
+// proxy each service
 const runProxy = (services: Service[], httpPort: number) => {
     const app = express();
 
