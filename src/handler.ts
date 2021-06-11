@@ -18,7 +18,7 @@ const runServices = (services: Service[], httpPort: number, prefixColors: string
 
     for (let i = 0; i < services.length; i++) {
         const execCommand = `
-            cd  ${process.cwd()}/${services[i].srvName};
+            cd  ${process.cwd()}/${services[i].srvSource};
             sls offline --stage dev --httpPort ${httpPort + i} --lambdaPort ${httpPort + i + 1000}
         `;
 
