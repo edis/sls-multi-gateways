@@ -2,8 +2,8 @@
 
 import concurrently from 'concurrently';
 import {readConfigFile, runProxy, runServices} from "./handler";
-
 import {Service} from "./types/service";
+
 
 const prefixColors = [
     'blue', 'green', 'magenta', 'cyan', 'white', 'gray', 'yellow', 'red'
