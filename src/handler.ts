@@ -1,7 +1,7 @@
 import {readFileSync} from "fs";
 import path from "path";
 import YAML from "yaml";
-import {Service} from "./service";
+import {Service} from "./types/service";
 import express from "express";
 import {createProxyMiddleware} from "http-proxy-middleware";
 

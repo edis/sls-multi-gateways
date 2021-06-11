@@ -1,0 +1,4 @@
+services:
+  - srvName: demo
+    srvPath: demo
+    srvSource: ./demo
