@@ -20,7 +20,7 @@ touch sls-multi-gateways.yml
 
 Inside your sls-multi-gateways config file add the services you would like to run
 ```bash
-port: [port proxy will run on]
+port: [port the proxy will run on]
 services:
   - srvName: [name of the service]
     srvPath: [proxy path to the service]
