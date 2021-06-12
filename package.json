@@ -1,7 +1,7 @@
 {
   "name": "sls-multi-gateways",
   "description": "",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [
