@@ -38,8 +38,8 @@ const runProxy = (services: Service[], httpPort: number) => {
 
     for (let i = 0; i < services.length; i++) {
 
-        app.use(`/dev/${services[i].srvPath}/`, createProxyMiddleware({
-            target: `http://localhost:${httpPort + i}/`,
+        app.use(`/${services[i].srvPath}/`, createProxyMiddleware({
+            target: `http://localhost:${httpPort + i}/dev/`,
             changeOrigin: true,
         }));
     }
