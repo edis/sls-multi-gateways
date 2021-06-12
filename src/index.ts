@@ -13,8 +13,9 @@ const file = readConfigFile()
 
 const services = file.services as Service[];
 const httpPort = file.port || 3000;
+const stage = file.stage || 'dev';
 
-const commands = runServices(services, httpPort, prefixColors);
+const commands = runServices(services, httpPort, stage, prefixColors);
 
 concurrently(commands, {
    killOthers: ['failure', 'success']
@@ -26,4 +27,4 @@ process.on('SIGINT', () => {
     process.exit(1);
 });
 
-runProxy(services, httpPort);
+runProxy(services, httpPort, stage);

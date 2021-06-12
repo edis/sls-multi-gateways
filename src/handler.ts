@@ -13,13 +13,13 @@ const readConfigFile = () => {
 };
 
 // runs each services
-const runServices = (services: Service[], httpPort: number, prefixColors: string[]) => {
+const runServices = (services: Service[], httpPort: number, stage: string, prefixColors: string[]) => {
     const commands = [];
 
     for (let i = 0; i < services.length; i++) {
         const execCommand = `
             cd  ${process.cwd()}/${services[i].srvSource};
-            sls offline --stage dev --httpPort ${httpPort + i} --lambdaPort ${httpPort + i + 1000}
+            sls offline --stage ${stage} --httpPort ${httpPort + i} --lambdaPort ${httpPort + i + 1000}
         `;
 
         commands.push({
@@ -33,13 +33,13 @@ const runServices = (services: Service[], httpPort: number, prefixColors: string
 }
 
 // proxy each service
-const runProxy = (services: Service[], httpPort: number) => {
+const runProxy = (services: Service[], httpPort: number, stage: string) => {
     const app = express();
 
     for (let i = 0; i < services.length; i++) {
 
         app.use(`/${services[i].srvPath}/`, createProxyMiddleware({
-            target: `http://localhost:${httpPort + i}/dev/`,
+            target: `http://localhost:${httpPort + i}/${stage}/`,
             changeOrigin: true,
         }));
     }
