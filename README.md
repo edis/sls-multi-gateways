@@ -20,7 +20,8 @@ touch sls-multi-gateways.yml
 
 Inside your sls-multi-gateways config file add the services you would like to run
 ```bash
-port: [port the proxy will run on]
+port: [port the proxy will run on - (optional: default is 3000)]
+stage: [stage the proxy will run on - (optional: default is dev)]
 services:
   - srvName: [name of the service]
     srvPath: [proxy path to the service]
@@ -30,7 +31,7 @@ services:
     srvSource: [path to the serverless.yml file belong to that service]
 ```
 
-All srvPaths are mapped to ```localhost:[port]/dev/[srvPath]```
+All srvPaths are mapped to ```localhost:[port]/[srvPath]```
 
 To run sls-multi-gateways, execute the following cmd in the directory with the config file
 
@@ -38,5 +39,3 @@ To run sls-multi-gateways, execute the following cmd in the directory with the c
 sls-multi-gateways
 ```
 
-## TODO
-- [ ] Allow stage arg to be passed in when running cli (default is dev)
