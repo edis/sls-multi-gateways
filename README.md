@@ -1,5 +1,6 @@
 # sls-multi-gateways
-sls-multi-gateways is a tool that allows you to run multiple api gateways under one domain for local development purposes.
+sls-multi-gateways is a tool that allows you to run multiple api gateways under one domain for local development purposes. <br /><br />
+[Here is a walkthrough article on medium](https://medium.com/@edisgonuler/run-multiple-serverless-applications-d8b38ef04f37)
 
 ## Installation
 sls-multi-gateways needs to be installed globally using the following command:
