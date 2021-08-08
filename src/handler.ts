@@ -38,10 +38,11 @@ const runProxy = (services: Service[], httpPort: number, stage: string) => {
 
 
     for (let i = 0; i < services.length; i++) {
-	const proxyPath = `/${services[i].srvPath}`
+        const proxyPath = `/${services[i].srvPath}`
+        const stripBasePath = services[i].stripBasePath
         app.use(proxyPath ,createProxyMiddleware({
 	        pathRewrite: (path: string) => { 
-                if (services[i].stripBasePath) {
+                if (stripBasePath) {
                     return path.replace(proxyPath, '/') 
                 } else {
                     return path
