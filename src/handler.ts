@@ -38,9 +38,15 @@ const runProxy = (services: Service[], httpPort: number, stage: string) => {
 
 
     for (let i = 0; i < services.length; i++) {
-	const proxyPath = `/${services[i].srvPath}/`
+	const proxyPath = `/${services[i].srvPath}`
         app.use(proxyPath ,createProxyMiddleware({
-	    pathRewrite: (path, req) => { return path.replace(proxyPath, '/') },
+	        pathRewrite: (path: string) => { 
+                if (services[i].stripBasePath) {
+                    return path.replace(proxyPath, '/') 
+                } else {
+                    return path
+                }
+            },
             target: `http://localhost:${httpPort + i}/${stage}/`,
             changeOrigin: true,
         }));
