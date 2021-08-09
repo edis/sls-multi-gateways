@@ -27,12 +27,16 @@ services:
   - srvName: [name of the service]
     srvPath: [proxy path to the service]
     srvSource: [path to the serverless.yml file belong to that service]
+    stripBasePath: [whether the srvPath will be passed on to the proxy]
   - srvName: [name of the service 2]
     srvPath: [proxy path to the service 2]
     srvSource: [path to the serverless.yml file belong to that service]
+    stripBasePath: [whether the srvPath will be passed on to the proxy]
 ```
 
-All srvPaths are mapped to ```localhost:[port]/[srvPath]```
+
+All srvPaths by default are mapped to ```localhost:[port]/[srvPath]```. To remove ```srvPath``` , set  ```stripBasePath``` to ```true```.
+<br /><br /> 
 
 To run sls-multi-gateways, execute the following cmd in the directory with the config file
 
